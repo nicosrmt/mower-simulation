@@ -1,46 +1,88 @@
-# Getting Started with Create React App
+# Test Technique
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Mower Simulation
 
-## Available Scripts
+## Introduction
 
-In the project directory, you can run:
+Voici le résultat du test technique que vous m'avez transmis en date du 4 septembre.
+Il fait suite à l'entretien effectué la veille avec Gwenaëlle Vicente.
 
-### `npm start`
+N'ayant pas pu travailler dessus en fin de semaine dernière, je tarde un petit peu à vous le rendre, j'espère que cela n'impactera pas l'évaluation de son contenu.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Description des fonctionnalités
 
-### `npm test`
+J'ai donc réalisé le test en suivant l'Objectif, et en me permettant de jouer un peu avec le sujet. En effet, cela faisait très longtemps que je n'avais pas fait de ReactJs et cela m'a donné envie d'aller un petit peu plus loin que ce qui était demandé. (Pas d'un point de vu purement esthétique comme vous allez pouvoir le remarquer).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Je n'ai pas trouvé nécessaire de poser des questions étant donné que l'énoncé est particulièrement bien expliqué.
 
-### `npm run build`
+Cependant, pour des raisons de lisibilité et d'expérience utilisateur, j'ai interprété de nombreux critères : 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Déplacement des tondeuses
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Il était demandé que chaque tondeuse se déplace de façon séquentielle. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Boutons de contrôle**
 
-### `npm run eject`
+Dans un soucis de scalabilité, j'ai rajouté un bouton de sélection de tondeuse de façon choisir celle que l'on souhaite déplacer.
+J'ai également rajouté des boutons de contrôle de la tondeuse, pouvant la faire avancer/reculer ou lire la suite des instructions suivantes automatiquement.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- **Tableau récapitulatif**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+J'ai décidé de faire un récapitulatif des tondeuses chargées dans le fichier, et d'afficher la position et orientation finale attendue de chaque tondeuse avant même de les avoirs lancées. Cela augmente la lisibilité du rendu, surtout si le nombre de tondeuses augmente.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- **Pelouse**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Afin de rendre le résultat visuel, j'ai également choisi d'afficher la pelouse. Cela permet de voir la position de la tondeuse en cours de déplacement, et les flèches pour l'orientation.
 
-## Learn More
+- **Pour aller plus loin**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+De façon à ne pas passer 10h sur le sujet, certaines fonctionnalités que j'ai eu en tête n'ont pas été implémentées, même si certaines font particulièrement sens avec l'énoncé :
+- Je pense notamment à afficher sur la pelouse les parcelles déjà tondues;
+- Eventuellement laisser toutes ou partie des tondeuses sur la pelouse en les distinguants avec un jeu de couleur par exemple. Cela dépend du nombre de tondeuse par parcelle potentielle sur la pelouse, car la lisibilité peut en être impactée;
+- Garder en mémoire la position et orientation des tondeuses qui ont déjà avancé.
+- Implémenter la succession automatique des tondeuses;
+- Charger plusieurs fichiers / afficher plusieurs pelouses...
+- Evidemment, mon rendu est loin d'être parfait, et de très nombreuses améliorations esthétiques peuvent être apportées.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Spécificités techniques
+
+D'un point de vu technique, la seule consigne était d'utiliser ReactJs. Tout a donc été développé en ReactJs étant donné la simplicité du programme.
+
+Cela aurait pu être pertinent, surtout pour la scalabillité, de créer une API pour la lecture du fichier, et le calcul des mouvements des tondeuses, voire une base de données si les tondeuses sont très nombreuses.
+
+### Architecture
+
+J'ai créé une architecture assez simpliste, basées sur les Composants et la volonté de les rendre autonomes.
+
+Etant donné la faible complexité du projet, tout est orchestré par App.tsx. Cela aurait été pertinent de créer des contextes, et des Composants intermédiaires.
+
+En conséquence, je n'ai pas non plus créer de sous-dossiers pour regrouper les Composants, ainsi que les styles.
+
+### Tests
+
+Pour les tests, je suis loin d'avoir fait une couverture complète du code.
+Malgré leur utilité, les tests de composants sont souvent très répétitifs et long à mettre en place, c'est pourquoi je me suis concentré uniquement sur App.tsx.
+
+Concernant les tests unitaires, j'ai essayé de couvrir un maximum de cas d'usage des fichiers de "services" et "utils".
+
+## Lancement
+
+```bash
+npm install
+```
+
+### API
+
+```bash
+npm start
+```
+
+[http://localhost:3000](http://localhost:3000) 
+
+### Tests
+
+```bash
+npm test
+```

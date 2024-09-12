@@ -1,0 +1,40 @@
+.mower-table-container {
+  margin: 20px auto;
+  overflow-x: auto;
+  text-align: center;
+}
+
+.mower-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  background-color: #f9f9f9;
+}
+
+.mower-table th, .mower-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.mower-table th {
+  background-color: #007bff;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.mower-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.mower-table tr:hover {
+  background-color: #ddd;
+}
+
+.instructions-cell {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
+}

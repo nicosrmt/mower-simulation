@@ -1,0 +1,27 @@
+.select-button {
+  background-color: transparent;
+  border: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: relative;
+}
+
+.select-button:before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 15px solid black;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.select-button:hover:before {
+  border-left-color: #0056b3;
+}
+  
