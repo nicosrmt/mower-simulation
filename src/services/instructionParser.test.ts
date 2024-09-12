@@ -44,4 +44,10 @@ describe('instructionParser', () => {
 
         expect(() => parseInstructions(invalidFileContent)).toThrow();
     });
+
+    it('should throw an error if mower initial position is outside the boundaries', () => {
+        const invalidFileContent = `55\r\n88 S\r\nLFRL\r\n22 N\r\nFFLR`;
+
+        expect(() => parseInstructions(invalidFileContent)).toThrow();
+    });
 });

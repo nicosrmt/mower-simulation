@@ -86,3 +86,4 @@ npm start
 ```bash
 npm test
 ```
+Il se peut que les tests ne se lancent pas car il n'y a pas eu de changement depuis le dernier commit : appuyer sur a.
