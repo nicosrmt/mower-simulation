@@ -5,10 +5,7 @@ Mower Simulation
 ## Introduction
 
 Voici le résultat du test technique que vous m'avez transmis en date du 4 septembre.
-Il fait suite à l'entretien effectué la veille avec Gwenaëlle Vicente.
-
-N'ayant pas pu travailler dessus en fin de semaine dernière, je tarde un petit peu à vous le rendre, j'espère que cela n'impactera pas l'évaluation de son contenu.
-
+Il fait suite à l'entretien effectué la veille.
 
 ## Description des fonctionnalités
 
